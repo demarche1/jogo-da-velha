@@ -5,9 +5,7 @@
 }
 body{
     font-family: 'Open Sans', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     height: 100vh;
     background: rgb(5,6,247);
     background: linear-gradient(90deg, rgba(5,6,247,1) 0%, rgba(5,0,83,1) 75%);
@@ -15,13 +13,11 @@ body{
 }
 img{
     width: 400px;
-    position: absolute;
-    top: 0;
 }
+
 /* Game stage style */
 .playerTime{
-    position: absolute;
-    bottom: 200px;
+    margin: 2rem;
 }
 .stage{
     display: grid;
@@ -29,6 +25,7 @@ img{
                          "3 4 5"
                          "6 7 8";
     gap: 5px;
+    justify-content: center;
 }
 
 .square{
@@ -53,11 +50,7 @@ img{
     font-size: 60px;
 }
 
-/* Footer style */
-
 footer{
-    position: absolute;
-    bottom: 50px;
-    border-bottom: 1px solid white;
+    margin-top: 2rem;
 }
 

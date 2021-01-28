@@ -24,7 +24,8 @@ function handleMove(position){
     }
 
     game_over_status = gameOver()
-
+    game_over_status = boardFilled()
+    console.log(playerTime);
     if(game_over_status == false){
         if(playerTime == 0){
             playerTime = 1
@@ -33,7 +34,7 @@ function handleMove(position){
             playerTime = 0
         }
     }
-    return game_over_status 
+
 }
 
 function gameOver(){
@@ -45,8 +46,29 @@ function gameOver(){
         let pos3 = arrayPosition[2]
 
         if(board[pos1] == board[pos2] && board[pos1] == board[pos3] && board[pos1] != ''){
+            setTimeout(() => {
+                alert("O vencedor foi jogador " + (playerTime - 1) + ". Parabéns")
+                location.reload()
+            }, 10);
             return true
         }
+    }
+    return false
+}
+
+function boardFilled(){
+    let filledPositions = null
+    for(let i = 0; i < board.length; i++){
+        if(board[i] != ''){
+            filledPositions ++
+        }
+    }
+    if(filledPositions == 9){
+        if(game_over_status != true)
+            setTimeout(() => {
+                alert("Empatou")
+                location.reload()
+            }, 10);
     }
     return false
 }

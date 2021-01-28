@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     squares.forEach((square) => {
         square.addEventListener("click", handleClick)
     })
-
-    document.querySelector(".play").addEventListener("click", showStage)
 })
 
 
@@ -14,14 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function handleClick(event){
     let square = event.target
     let position = square.id
-    if(handleMove(position) == true){
-        setTimeout(() => {
-            alert("O vencedor foi jogador " + playerTime + ". Parabéns")
-        }, 10);
-        setTimeout(() => {
-            location.reload()
-        }, 500);
-    }
+    handleMove(position)
     updateSquare(position)
     updatePlayer()
 }
